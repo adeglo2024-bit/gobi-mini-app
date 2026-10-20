@@ -5,28 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101426">
 <title>GOBI — Play. Collect. Rise.</title>
-
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
 <style>
-:root {
-  color-scheme: dark;
-  --bg:#101426;
-  --panel:#1a2038;
-  --panel2:#222b47;
-  --gold:#ffcf57;
-  --green:#7af0c1;
-  --text:#f7f8ff;
-  --muted:#aab3ce;
-  --line:#303a5b;
-}
+:root{color-scheme:dark;--bg:#101426;--panel:#1a2038;--panel2:#222b47;--gold:#ffcf57;--green:#7af0c1;--text:#f7f8ff;--muted:#aab3ce;--line:#303a5b}
 *{box-sizing:border-box}
-body{
-  margin:0;
-  background:radial-gradient(ellipse at top,#273657 0,#101426 52%);
-  color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-}
+body{margin:0;background:radial-gradient(ellipse at top,#273657 0,#101426 52%);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif}
 button{font:inherit;cursor:pointer}
 .app{max-width:520px;margin:auto;padding:20px 16px 36px}
 header{display:flex;justify-content:space-between;align-items:center}
@@ -34,40 +18,19 @@ header{display:flex;justify-content:space-between;align-items:center}
 .tag{font-size:12px;color:var(--muted);margin-top:3px}
 .status{font-size:11px;border:1px solid var(--line);padding:8px 10px;border-radius:20px;color:var(--green)}
 .hero{text-align:center;padding:25px 0 15px}
-.mascot{
-  width:155px;height:155px;margin:0 auto 18px;
-  display:grid;place-items:center;
-  border-radius:36px;
-  background:linear-gradient(145deg,#ffe28a,#ffad53);
-  box-shadow:0 9px 0 #9e583d,0 20px 45px #0005;
-  transform:rotate(-4deg);
-  position:relative;
-}
-.mascot:after{
-  content:"";position:absolute;width:20px;height:20px;
-  border:5px solid #fff5;border-radius:50%;top:12px;right:15px
-}
+.mascot{width:155px;height:155px;margin:0 auto 18px;display:grid;place-items:center;border-radius:36px;background:linear-gradient(145deg,#ffe28a,#ffad53);box-shadow:0 9px 0 #9e583d,0 20px 45px #0005;transform:rotate(-4deg);position:relative}
+.mascot:after{content:"";position:absolute;width:20px;height:20px;border:5px solid #fff5;border-radius:50%;top:12px;right:15px}
 .gobiface{font-size:86px;filter:drop-shadow(0 5px 0 #9c5a3d)}
 h1{font-size:28px;margin:0}
 .subtitle{color:var(--muted);font-size:13px;margin:7px 0 19px}
-.balance{
-  background:linear-gradient(140deg,#283654,#1a2038);
-  border:1px solid var(--line);border-radius:22px;padding:18px;
-  text-align:left;
-}
+.balance{background:linear-gradient(140deg,#283654,#1a2038);border:1px solid var(--line);border-radius:22px;padding:18px;text-align:left}
 .balance-top{display:flex;justify-content:space-between;align-items:center}
 .label{font-size:11px;color:var(--muted);letter-spacing:1px}
 .badge{font-size:10px;background:#34334d;color:var(--gold);padding:6px 8px;border-radius:20px}
 .points{font-size:36px;font-weight:950;color:var(--gold);margin-top:7px}
 .balance-bottom{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:4px}
 .tap-area{display:flex;justify-content:center;padding:25px 0 18px}
-.tap{
-  width:190px;height:190px;border-radius:50%;border:7px solid #ffe7a4;
-  background:linear-gradient(145deg,#ffdf79,#ff9c50);
-  color:#32233c;font-size:80px;
-  box-shadow:0 10px 0 #a95e49,0 18px 36px #0005;
-  touch-action:manipulation;transition:transform .08s;
-}
+.tap{width:190px;height:190px;border-radius:50%;border:7px solid #ffe7a4;background:linear-gradient(145deg,#ffdf79,#ff9c50);color:#32233c;font-size:80px;box-shadow:0 10px 0 #a95e49,0 18px 36px #0005;touch-action:manipulation;transition:transform .08s}
 .tap:active{transform:scale(.94) translateY(4px)}
 .hint{text-align:center;font-size:12px;color:var(--muted)}
 .section-title{font-size:16px;font-weight:850;margin:26px 0 12px}
@@ -94,7 +57,6 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
 
 <body>
 <main class="app">
-
 <header>
   <div>
     <div class="brand">GOBI<span style="color:var(--gold)">.</span></div>
@@ -104,12 +66,9 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
 </header>
 
 <section class="hero">
-  <div class="mascot" aria-label="GOBI mascot">
-    <div class="gobiface">🐾</div>
-  </div>
+  <div class="mascot" aria-label="GOBI mascot"><div class="gobiface">🐾</div></div>
   <h1>Ready to collect?</h1>
   <p class="subtitle" id="welcome">Your next round starts here.</p>
-
   <div class="balance">
     <div class="balance-top">
       <div class="label">YOUR GOBI POINTS</div>
@@ -118,7 +77,7 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
     <div class="points" id="points">0</div>
     <div class="balance-bottom">
       <span>Keep playing</span>
-      <span id="tapCount">0 taps</span>
+      <span id="tapCount">Server verified</span>
     </div>
   </div>
 </section>
@@ -126,36 +85,29 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
 <div class="tap-area">
   <button class="tap" id="tapButton" aria-label="Collect a game point">🐾</button>
 </div>
-<div class="hint">TAP GOBI TO COLLECT GAME POINTS</div>
+<div class="hint">TAP GOBI TO PLAY</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <div class="section-title">Your daily missions</div>
 <section class="grid">
   <article class="card">
-    <div class="icon">🎁</div>
-    <h2>Daily reward</h2>
-    <p>Return daily to keep your routine going.</p>
-    <button class="btn" id="dailyButton">Claim +25</button>
+    <div class="icon">🎁</div><h2>Daily reward</h2>
+    <p>Claim your reward once per day.</p>
+    <button class="btn" id="dailyButton">Claim daily reward</button>
   </article>
-
   <article class="card">
-    <div class="icon">🤝</div>
-    <h2>Invite friends</h2>
-    <p>Share GOBI with your friends.</p>
+    <div class="icon">🤝</div><h2>Invite friends</h2>
+    <p>Share GOBI using your personal referral link.</p>
     <button class="btn secondary" id="inviteButton">Invite friends</button>
   </article>
-
   <article class="card">
-    <div class="icon">🏆</div>
-    <h2>Leaderboard</h2>
-    <p id="leaderText">Shared rankings are not connected yet.</p>
+    <div class="icon">🏆</div><h2>Leaderboard</h2>
+    <p>Shared rankings are not connected yet.</p>
     <button class="btn secondary" id="leaderButton">View rankings</button>
   </article>
-
   <article class="card">
-    <div class="icon">🎯</div>
-    <h2>More missions</h2>
-    <p>New missions can be added after the backend is ready.</p>
+    <div class="icon">🎯</div><h2>More missions</h2>
+    <p>Additional missions will be added later.</p>
     <button class="btn secondary" id="missionsButton">Check missions</button>
   </article>
 </section>
@@ -165,14 +117,12 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
   <div class="wallet-row">
     <div>
       <div class="label">AVAILABLE GAME POINTS</div>
-      <div class="wallet-amount" id="walletPoints">0 points</div>
+      <div class="wallet-amount" id="walletPoints">Loading...</div>
     </div>
     <div style="font-size:30px">👛</div>
   </div>
-  <p class="wallet-note" id="walletNote">
-    This prototype uses points for gameplay. A real-money balance and withdrawals are not enabled.
-  </p>
-  <button class="btn secondary" id="walletButton">Wallet details</button>
+  <p class="wallet-note" id="walletNote">Loading your server-backed wallet.</p>
+  <button class="btn secondary" id="walletButton">Refresh wallet</button>
 </section>
 
 <nav>
@@ -182,133 +132,217 @@ footer{text-align:center;font-size:10px;color:#78829f;margin-top:22px}
 </nav>
 
 <div class="notice">
-  <strong>Transparency:</strong> Game points are not cash and have no guaranteed monetary value. Shared accounts, server-verified rewards, referrals, and cash withdrawals are not enabled yet.
+<strong>Transparency:</strong> GOBI points are game points, not cash. Withdrawals and cash payouts are not enabled.
 </div>
-
 <footer>GOBI © 2026 · An independent game</footer>
 </main>
 
 <script>
-const SUPABASE_FUNCTION_URL =
+"use strict";
+
+const API =
   "https://vdztzmtpqufydjelnsmq.supabase.co/functions/v1/quick-task";
 
 const tg = window.Telegram?.WebApp;
+const $ = id => document.getElementById(id);
+
+let serverConnected = false;
+let busy = false;
+
 if (tg) {
   tg.ready();
   tg.expand();
+
   const user = tg.initDataUnsafe?.user;
   if (user?.first_name) {
-    document.getElementById("welcome").textContent =
+    $("welcome").textContent =
       "Welcome, " + user.first_name + ". Your next round starts here.";
   }
 }
 
-const $ = id => document.getElementById(id);
-const today = () => new Date().toISOString().slice(0,10);
-let points = Number(localStorage.getItem("gobi_demo_points") || 0);
-let lastDaily = localStorage.getItem("gobi_demo_daily") || "";
-let taps = Number(localStorage.getItem("gobi_demo_taps") || 0);
-
-function render() {
-  $("points").textContent = points.toLocaleString();
-  $("walletPoints").textContent = points.toLocaleString() + " points";
-  $("tapCount").textContent = taps.toLocaleString() + " taps";
-}
 function message(text) {
   $("toast").textContent = text;
   clearTimeout(message.timer);
-  message.timer = setTimeout(() => $("toast").textContent = "", 2800);
+  message.timer = setTimeout(() => $("toast").textContent = "", 3500);
 }
-function save() {
-  localStorage.setItem("gobi_demo_points", String(points));
-  localStorage.setItem("gobi_demo_taps", String(taps));
-  render();
+
+async function gobiRequest(action) {
+  if (!tg || !tg.initData) {
+    throw new Error("Open GOBI from its Telegram bot to authenticate.");
+  }
+
+  const response = await fetch(API, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      action,
+      initData: tg.initData
+    })
+  });
+
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    throw new Error(
+      result.error || "Backend request failed (" + response.status + ")."
+    );
+  }
+
+  return result;
+}
+
+function displayPoints(value) {
+  const amount = Number(value);
+
+  if (!Number.isFinite(amount) || amount < 0) {
+    throw new Error("The backend returned an invalid point balance.");
+  }
+
+  $("points").textContent = amount.toLocaleString();
+  $("walletPoints").textContent = amount.toLocaleString() + " points";
+}
+
+async function loadProfile() {
+  const result = await gobiRequest("profile");
+
+  if (!result.success || !result.profile) {
+    throw new Error("The backend did not return your profile.");
+  }
+
+  displayPoints(result.profile.points);
+  serverConnected = true;
+  $("status").textContent = "Backend online";
+}
+
+async function loadWallet() {
+  const result = await gobiRequest("wallet");
+
+  if (!result.success || !result.wallet) {
+    throw new Error("Wallet information is unavailable.");
+  }
+
+  displayPoints(result.wallet.points);
+  $("walletNote").textContent =
+    "Your points are stored by GOBI. Cash withdrawals are not enabled.";
+  message("Wallet refreshed from the backend.");
+}
+
+async function claimDaily() {
+  if (busy) return;
+
+  busy = true;
+  $("dailyButton").disabled = true;
+
+  try {
+    const result = await gobiRequest("daily_claim");
+
+    if (result.already_claimed) {
+      message("You've already claimed today's reward.");
+      return;
+    }
+
+    if (!result.success) {
+      throw new Error(result.error || "Daily reward was not claimed.");
+    }
+
+    displayPoints(result.points);
+    message("Daily reward claimed: +" + result.reward + " points!");
+  } catch (error) {
+    message(error.message);
+  } finally {
+    busy = false;
+    $("dailyButton").disabled = false;
+  }
+}
+
+async function inviteFriends() {
+  try {
+    const result = await gobiRequest("referral_info");
+
+    if (!result.success || !result.referral_link) {
+      throw new Error("Your referral link is unavailable.");
+    }
+
+    const link = result.referral_link;
+    const text = "Come play GOBI — Play, Collect, Rise!";
+
+    if (tg?.openTelegramLink) {
+      tg.openTelegramLink(
+        "https://t.me/share/url?url=" +
+        encodeURIComponent(link) +
+        "&text=" +
+        encodeURIComponent(text)
+      );
+    } else if (navigator.share) {
+      await navigator.share({ title: "GOBI", text, url: link });
+    } else {
+      await navigator.clipboard.writeText(link);
+      message("Referral link copied!");
+    }
+  } catch (error) {
+    message(error.message);
+  }
 }
 
 $("tapButton").addEventListener("click", () => {
-  points++;
-  taps++;
-  save();
-  if (taps % 10 === 0) message("Nice run! " + taps + " taps completed.");
+  message(
+    "Tap-to-earn is not connected to the server yet. Your points won't be changed locally."
+  );
 });
 
-$("dailyButton").addEventListener("click", () => {
-  if (lastDaily === today()) {
-    message("You've claimed today's demo reward. Come back tomorrow!");
-    return;
-  }
-  points += 25;
-  lastDaily = today();
-  localStorage.setItem("gobi_demo_daily", lastDaily);
-  save();
-  message("+25 demo game points claimed!");
-});
-
-$("inviteButton").addEventListener("click", async () => {
-  const shareText = "Come play GOBI — Play, Collect, Rise!";
-  const shareUrl = location.href;
-  const shareLink = "https://t.me/share/url?url=" +
-    encodeURIComponent(shareUrl) + "&text=" + encodeURIComponent(shareText);
-
-  if (tg?.openTelegramLink) {
-    tg.openTelegramLink(shareLink);
-  } else if (navigator.share) {
-    try { await navigator.share({title:"GOBI",text:shareText,url:shareUrl}); }
-    catch (_) {}
-  } else {
-    try {
-      await navigator.clipboard.writeText(shareText + " " + shareUrl);
-      message("Invite link copied!");
-    } catch (_) {
-      message("Share this page link with your friends.");
-    }
-  }
-});
+$("dailyButton").addEventListener("click", claimDaily);
+$("inviteButton").addEventListener("click", inviteFriends);
 
 $("leaderButton").addEventListener("click", () => {
-  message("Shared leaderboard is not connected yet.");
+  message("The shared leaderboard has not been implemented yet.");
 });
 
 $("missionsButton").addEventListener("click", () => {
-  message("More missions will arrive when the backend is ready.");
+  message("More missions will be added after server-side reward validation.");
 });
 
-function showWallet() {
-  message("Wallet is in game-points mode. Cash withdrawals aren't enabled.");
-}
-$("walletButton").addEventListener("click", showWallet);
-$("walletNav").addEventListener("click", showWallet);
-$("missionsNav").addEventListener("click", () => {
-  document.querySelector(".grid").scrollIntoView({behavior:"smooth"});
-});
-$("homeNav").addEventListener("click", () => {
-  window.scrollTo({top:0,behavior:"smooth"});
-});
-
-async function checkBackend() {
+$("walletButton").addEventListener("click", async () => {
   try {
-    const response = await fetch(SUPABASE_FUNCTION_URL, {
-      method:"GET",
-      headers: { "Content-Type":"application/json" }
-    });
+    await loadWallet();
+  } catch (error) {
+    message(error.message);
+  }
+});
 
-    // Supabase may require authorization; do not weaken server security
-    // just to make a public status check work.
-    if (!response.ok) throw new Error("Backend requires authorization");
+$("walletNav").addEventListener("click", () => {
+  document.querySelector(".panel").scrollIntoView({ behavior: "smooth" });
+});
 
-    const data = await response.json();
-    if (data.app === "GOBI" && data.status === "online") {
-      $("status").textContent = "Backend online";
-    } else {
-      $("status").textContent = "Backend check";
-    }
-  } catch (_) {
-    $("status").textContent = "Game mode";
+$("missionsNav").addEventListener("click", () => {
+  document.querySelector(".grid").scrollIntoView({ behavior: "smooth" });
+});
+
+$("homeNav").addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+async function initialise() {
+  if (!tg || !tg.initData) {
+    $("status").textContent = "Open in Telegram";
+    $("walletPoints").textContent = "Unavailable";
+    $("walletNote").textContent =
+      "Open GOBI through @PlayGobiBot to authenticate your account.";
+    return;
+  }
+
+  try {
+    await loadProfile();
+    $("walletNote").textContent =
+      "Your points are loaded from the GOBI backend.";
+  } catch (error) {
+    $("status").textContent = "Connection error";
+    $("walletPoints").textContent = "Unavailable";
+    $("walletNote").textContent = error.message;
+    message(error.message);
   }
 }
 
-render();
-checkBackend();
+initialise();
 </script>
 </body>
 </html>
